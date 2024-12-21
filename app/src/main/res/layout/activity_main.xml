@@ -1,15 +1,32 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- Title TextView -->
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Alarms"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <!-- RecyclerView for displaying alarms -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/fab_add_alarm" />
+        android:layout_below="@id/textView2"
+        android:layout_above="@id/fab_add_alarm"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp" />
 
+    <!-- Floating Action Button for adding alarms -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_add_alarm"
         android:layout_width="wrap_content"
@@ -17,9 +34,9 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_margin="16dp"
-        app:srcCompat="@drawable/add"
-        android:contentDescription="@string/add_alarm"/>
-
-
+        android:contentDescription="@string/add_alarm"
+        android:elevation="6dp"
+        android:src="@drawable/baseline_add_box_24"
+        app:tint="@color/white" />
 
 </RelativeLayout>

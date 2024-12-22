@@ -2,6 +2,7 @@ package com.example.final3;
 
 import android.app.AlarmManager;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +39,7 @@ public class AlarmAdapter extends RecyclerView.Adapter<AlarmAdapter.AlarmViewHol
         holder.daysTextView.setText(alarm.getFormattedDays());
 
         holder.editButton.setOnClickListener(v -> {
-            // 編輯邏輯
+            ((MainActivity) context).editAlarm(position, alarm);
         });
 
         holder.deleteButton.setOnClickListener(v -> {

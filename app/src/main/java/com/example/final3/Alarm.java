@@ -25,6 +25,21 @@ public class Alarm {
         return days;
     }
 
+    public void setHour(int hour) {
+        this.hour = hour;
+    }
+
+    public void setMinute(int minute) {
+        this.minute = minute;
+    }
+
+    public void setDays(boolean[] days) {
+        if (days != null && days.length == 7) {
+            this.days = days.clone();
+        }
+    }
+
+
     public String getFormattedDays() {
         String[] dayNames = {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};
         StringBuilder formattedDays = new StringBuilder();
